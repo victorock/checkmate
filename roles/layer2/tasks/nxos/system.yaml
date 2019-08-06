@@ -13,9 +13,9 @@
 
 - name: "nxos.system: assert system resources"
   vars:
-    show_system_resources: "{{ ansible_facts['show_system_resources'] }}"
+    system_resources: "{{ ansible_facts['show_system_resources'] }}"
   assert:
     that: 
-    - show_system_resources['cpu_state_idle'] >= 20
-    - show_system_resources['memory_usage_used'] <= (show_system_resources['memory_usage_total'] * 0.80)
-    - show_system_resources['current_memory_status'] == 'OK'
+    - system_resources['cpu_state_idle'] >= 20
+    - system_resources['memory_usage_used'] <= (system_resources['memory_usage_total'] * 0.80)
+    - system_resources['current_memory_status'] == 'OK'
