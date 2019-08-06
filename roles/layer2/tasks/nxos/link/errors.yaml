@@ -8,8 +8,12 @@
       transform:
       - name: "str_to_native"
       - name: "nxos_flatten_table_row"
+      - name: set_root_key
+        key: show_interface_status_err__disabled
 
-- name: "nxos.link.errors: assert entry"
+- name: "nxos.link.error: assert interface status err-disabled"
+  ignore_errors: true
+  vars:
+    interface_status_err_disabled: "{{ ansible_facts['show_interface_status_err__disabled'] }}"
   assert:
-    that:
-      - "error counters didn't increment...."
+    that: interface_status_err_disabled is string

@@ -8,7 +8,8 @@
       transform:
       - name: "str_to_native"
       - name: "nxos_flatten_table_row"
-  register: "link_counters_before"
+      - name: set_root_key
+        key: show_interface_counters_errors_before
 
 - name: "nxos.link.counters: wait for 60 seconds"
   wait_for:
@@ -23,9 +24,13 @@
       transform:
       - name: "str_to_native"
       - name: "nxos_flatten_table_row"
-  register: "link_counters_after"
+      - name: set_root_key
+        key: show_interface_counters_errors_after
 
-- name: "nxos.link.counters: assert entry"
+- name: "nxos.link.counters: assert interface counters errors (before and after)"
+  ignore_errors: true
+  vars:
+    interface_counters_errors_before: "{{ ansible_facts['show_interface_counters_errors_before'] }}"
+    interface_counters_errors_after: "{{ ansible_facts['show_interface_counters_errors_after'] }}"
   assert:
-    that:
-      - "error counters didn't increment...."
+    that: interface_counters_errors_before == interface_counters_errors_after
