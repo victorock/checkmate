@@ -12,6 +12,7 @@
           key: show_system_resources
 
 - name: "nxos.system: assert system resources"
+  ignore_errors: true
   vars:
     system_resources: "{{ ansible_facts['show_system_resources'] }}"
   assert:
