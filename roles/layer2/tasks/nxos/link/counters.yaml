@@ -1,0 +1,31 @@
+---
+- name: "nxos.link.counters: show interface counters errors (before)"
+  cli_parse_transform:
+    engine: "native_json"
+    commands:
+    - command: "show interface counters errors"
+      set_fact: False
+      transform:
+      - name: "str_to_native"
+      - name: "nxos_flatten_table_row"
+  register: "link_counters_before"
+
+- name: "nxos.link.counters: wait for 60 seconds"
+  wait_for:
+    timeout: 60
+
+- name: "nxos.link.counters: show interface counters errors (after)"
+  cli_parse_transform:
+    engine: "native_json"
+    commands:
+    - command: "show interface counters errors"
+      set_fact: False
+      transform:
+      - name: "str_to_native"
+      - name: "nxos_flatten_table_row"
+  register: "link_counters_after"
+
+- name: "nxos.link.counters: assert entry"
+  assert:
+    that:
+      - "error counters didn't increment...."

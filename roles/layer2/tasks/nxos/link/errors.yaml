@@ -1,0 +1,15 @@
+---
+- name: "nxos.link.error: show interface status err-disabled"
+  cli_parse_transform:
+    engine: "native_json"
+    commands:
+    - command: "show interface status err-disabled"
+      set_fact: False
+      transform:
+      - name: "str_to_native"
+      - name: "nxos_flatten_table_row"
+
+- name: "nxos.link.errors: assert entry"
+  assert:
+    that:
+      - "error counters didn't increment...."

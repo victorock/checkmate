@@ -1,0 +1,6 @@
+---
+- import_playbook: "layer2/arp.yaml"
+- import_playbook: "layer2/cdp.yaml"
+- import_playbook: "layer2/link.yaml"
+- import_playbook: "layer2/lldp.yaml"
+- import_playbook: "layer2/mac.yaml"

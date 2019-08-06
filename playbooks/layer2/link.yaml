@@ -1,0 +1,7 @@
+---
+- name: "Layer2: link"
+  hosts: all
+  gather_facts: false
+  roles:
+    - role: "layer2"
+      function: "link"

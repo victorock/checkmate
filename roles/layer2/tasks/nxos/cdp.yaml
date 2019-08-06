@@ -1,0 +1,18 @@
+---
+- name: "nxos.cdp: enable cdp"
+  nxos_config:
+    lines: "cdp enable"
+
+- name: "nxos.cdp: show cdp neighbor"
+  cli_parse_transform:
+    engine: "native_json"
+    commands:
+      - command: "show cdp neighbor"
+        set_fact: True
+        transform:
+        - name: "nxos_flatten_table_row"
+
+- name: "nxos.cdp: assert entry"
+  assert:
+    that: 
+    - "desired neighbors are present...."

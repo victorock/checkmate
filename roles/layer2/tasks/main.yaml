@@ -1,0 +1,21 @@
+---
+- name: "layer2: main"
+  block:
+    - name: "layer2: init vars"
+      include_tasks: "{{ role_path }}/includes/vars.yaml"
+
+    - name: "layer2: init pre_tasks"
+      include_tasks: "{{ role_path }}/includes/pre_tasks.yaml"
+
+    - name: "layer2: init pre_roles"
+      include_tasks: "{{ role_path }}/includes/pre_roles.yaml"
+
+    - name: "layer2: init tasks"
+      include_tasks: "{{ role_path }}/includes/tasks.yaml"
+
+  always:
+    - name: "layer2: init post tasks"
+      include_tasks: "{{ role_path }}/includes/post_tasks.yaml"
+
+    - name: "layer2: init post roles"
+      include_tasks: "{{ role_path }}/includes/post_roles.yaml"

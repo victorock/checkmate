@@ -1,0 +1,4 @@
+---
+- name: "nmake.jetpack"
+  scm: "git"
+  src: "https://github.com/nmake/jetpack"
