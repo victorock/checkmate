@@ -1,4 +1,4 @@
 ---
 - name: "collectors.example.main: call collectors"
-  include_tasks: "{{ item }}.yaml"
+  include_tasks: "{{ role_path }}/includes/collectors/example/{{ item }}.yaml"
   loop: "{{ layer2_collectors }}"

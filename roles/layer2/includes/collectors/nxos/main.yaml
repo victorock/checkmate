@@ -1,4 +1,4 @@
 ---
 - name: "collectors.nxos.main: call collectors"
-  include_tasks: "{{ item }}.yaml"
+  include_tasks: "{{ role_path }}/includes/collectors/nxos/{{ item }}.yaml"
   loop: "{{ layer2_collectors }}"
