@@ -1,6 +1,0 @@
----
-- name: "nxos.link: counters"
-  include_tasks: "link/counters.yaml"
-
-- name: "nxos.link: errors"
-  include_tasks: "link/errors.yaml"

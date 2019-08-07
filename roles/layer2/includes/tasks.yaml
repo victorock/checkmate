@@ -9,4 +9,3 @@
         # yamllint disable-line rule:line-length
         - "{{ layer2_os }}/{{ layer2_platform }}/{{ layer2_function }}.yaml"
         - "{{ layer2_os }}/{{ layer2_function }}.yaml"
-        - "{{ layer2_os }}/main.yaml"

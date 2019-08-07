@@ -1,8 +1,4 @@
 ---
-- name: "nxos.cdp: enable lldp"
-  nxos_config:
-    lines: "feature lldp"
-
 - name: "nxos.lldp: show lldp neighbor"
   cli_parse_transform:
     engine: "native_json"
@@ -11,8 +7,5 @@
         set_fact: True
         transform:
         - name: "nxos_flatten_table_row"
-
-- name: "nxos.lldp: assert entry"
-  assert:
-    that: 
-    - "desired neighbors are present...."
+        - name: set_root_key
+          key: lldp_neighbor

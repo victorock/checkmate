@@ -1,1 +1,7 @@
 ---
+_layer2_collectors:
+ - 'arp'
+ - 'mac'
+ - 'interface'
+ - 'system'
+ - 'spanning_tree'

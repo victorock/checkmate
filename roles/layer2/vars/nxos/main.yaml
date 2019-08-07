@@ -1,0 +1,10 @@
+---
+_layer2_collectors:
+  - 'arp'
+  - 'cdp'
+  - 'interface'
+  - 'lldp'
+  - 'mac'
+  - 'spanning_tree'
+  - 'system'
+  - 'vlan'

@@ -1,0 +1,35 @@
+---
+- name: "nxos.interface: show interface status err-disabled"
+  cli_parse_transform:
+    engine: "native_json"
+    commands:
+    - command: "show interface status err-disabled"
+      set_fact: False
+      transform:
+      - name: "str_to_native"
+      - name: "nxos_flatten_table_row"
+      - name: set_root_key
+        key: interface_status_err__disabled
+
+- name: "nxos.interface: show interface counters errors"
+  cli_parse_transform:
+    engine: "native_json"
+    commands:
+    - command: "show interface counters errors"
+      set_fact: False
+      transform:
+      - name: "str_to_native"
+      - name: "nxos_flatten_table_row"
+      - name: set_root_key
+        key: interface_counters_errors
+
+- name: "nxos.interface: show interface status"
+  cli_parse_transform:
+    engine: "native_json"
+    commands:
+    - command: "show interface status"
+      set_fact: False
+      transform:
+      - name: "nxos_flatten_table_row"
+      - name: set_root_key
+        key: interface_status
