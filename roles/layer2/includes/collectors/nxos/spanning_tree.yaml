@@ -23,7 +23,7 @@
         - name: set_root_key
           key: spanning__tree_inconsistentports
 
-- name: "nxos.spanning_tree: show spanning-tree forwarding"
+- name: "nxos.spanning_tree: show spanning-tree active detail"
   ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
@@ -33,7 +33,7 @@
         transform:
         - name: "nxos_flatten_table_row"
         - name: set_root_key
-          key: spanning__tree_forwarding
+          key: spanning__tree_active_detail
 
 - name: "nxos.spanning_tree: show spanning-tree root detail"
   ignore_errors: "{{ layer2_ignore_errors }}"
