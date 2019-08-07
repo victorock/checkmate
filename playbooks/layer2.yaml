@@ -5,3 +5,14 @@
   roles:
     - role: "victorock.jetpack"
     - role: "layer2"
+      collectors:
+        - 'arp'
+        - 'cdp'
+        - 'fex'
+        - 'interface'
+        - 'lldp'
+        - 'mac'
+        - 'mlag'
+        - 'spanning_tree'
+        - 'system'
+        - 'vlan'
