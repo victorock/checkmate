@@ -3,5 +3,5 @@
   hosts: all
   gather_facts: false
   roles:
-    - role: "nmake.jetpack"
+    - role: "victorock.jetpack"
     - role: "layer2"

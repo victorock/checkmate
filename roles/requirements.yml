@@ -1,4 +1,4 @@
 ---
-- name: "nmake.jetpack"
+- name: "victorock.jetpack"
   scm: "git"
-  src: "https://github.com/nmake/jetpack"
+  src: "https://github.com/victorock/jetpack"
