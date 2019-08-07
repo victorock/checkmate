@@ -5,8 +5,10 @@
     - skip: true
       files:
         # yamllint disable-line rule:line-length
-        - "collectors/{{ layer2_os }}/{{ layer2_platform }}/{{ layer2_version }}/{{ layer2_function }}.yaml"
+        - "{{ layer2_os }}/{{ layer2_platform }}/{{ layer2_version }}/{{ layer2_function }}.yaml"
         # yamllint disable-line rule:line-length
-        - "collectors/{{ layer2_os }}/{{ layer2_platform }}/{{ layer2_function }}.yaml"
-        - "collectors/{{ layer2_os }}/{{ layer2_function }}.yaml"
+        - "{{ layer2_os }}/{{ layer2_platform }}/{{ layer2_function }}.yaml"
+        - "{{ layer2_os }}/{{ layer2_function }}.yaml"
+      paths:
+        - "{{ role_path }}/includes/collectors"
 
