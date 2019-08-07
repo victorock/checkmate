@@ -1,5 +1,6 @@
 ---
 - name: "nxos.mlag: show vpc"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -11,6 +12,7 @@
           key: "vpc"
 
 - name: "nxos.mlag: show vpc consistency-parameters global"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -22,6 +24,7 @@
           key: "vpc_consistency__parameters_global"
 
 - name: "nxos.mlag: show vpc consistency-parameters vlans"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:

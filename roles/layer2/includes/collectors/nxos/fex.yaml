@@ -12,6 +12,7 @@
           key: "fex"
 
 - name: "nxos.fex: show fex detail"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:

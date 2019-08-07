@@ -1,5 +1,6 @@
 ---
 - name: "nxos.spanning_tree: show spanning-tree blockedports"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -11,6 +12,7 @@
           key: spanning__tree_blockedports
 
 - name: "nxos.spanning_tree: show spanning-tree inconsistentports"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -22,6 +24,7 @@
           key: spanning__tree_inconsistentports
 
 - name: "nxos.spanning_tree: show spanning-tree forwarding"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -33,6 +36,7 @@
           key: spanning__tree_forwarding
 
 - name: "nxos.spanning_tree: show spanning-tree root detail"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:

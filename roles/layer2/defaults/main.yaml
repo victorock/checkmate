@@ -5,5 +5,6 @@ layer2_os: "{{ ansible_network_os | default(None, True) }}"
 layer2_platform: "{{ ansible_network_platform | default(None, True) }}"
 layer2_function: "{{ function | default('main') }}"
 layer2_collectors: "{{ collectors | default(_layer2_collectors) }}"
+layer2_ignore_errors: "false"
 layer2_post_tasks: []
 layer2_post_roles: []

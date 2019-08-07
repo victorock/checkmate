@@ -1,5 +1,6 @@
 ---
 - name: "nxos.mac: show mac address-table"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:

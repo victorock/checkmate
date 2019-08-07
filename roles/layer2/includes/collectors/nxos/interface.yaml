@@ -1,5 +1,6 @@
 ---
 - name: "nxos.interface: show interface status err-disabled"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -12,6 +13,7 @@
         key: interface_status_err__disabled
 
 - name: "nxos.interface: show interface counters errors"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -24,6 +26,7 @@
         key: interface_counters_errors
 
 - name: "nxos.interface: show interface status"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -35,6 +38,7 @@
         key: interface_status
 
 - name: "nxos.interface: show interface switchport"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -46,6 +50,7 @@
         key: interface_switchport
 
 - name: "nxos.interface: show interface trunk"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -57,6 +62,7 @@
         key: interface_trunk
 
 - name: "nxos.interface: show interface transceiver"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:

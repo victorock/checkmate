@@ -1,5 +1,6 @@
 ---
 - name: "nxos.arp: show ip arp statistics"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -11,6 +12,7 @@
           key: "ip_arp_statistics"
 
 - name: "nxos.arp: show ip arp vrf all"
+  ignore_errors: "{{ layer2_ignore_errors }}"
   cli_parse_transform:
     engine: "native_json"
     commands:
