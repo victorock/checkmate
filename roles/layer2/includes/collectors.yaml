@@ -1,6 +1,8 @@
 ---
 - name: "collectors: call os/platform/version specific collectors"
-  include_tasks: "{{ item }}"
+  include_tasks: "{{ taskfile }}"
+  loop_control:
+    loop_var: taskfile
   with_first_found:
     - skip: true
       files:
