@@ -2,9 +2,11 @@
 _layer2_collectors:
   - 'arp'
   - 'cdp'
+  - 'fex'
   - 'interface'
   - 'lldp'
   - 'mac'
+  - 'mlag'
   - 'spanning_tree'
   - 'system'
   - 'vlan'

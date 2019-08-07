@@ -10,8 +10,8 @@
     - name: "layer2: init pre_roles"
       include_tasks: "{{ role_path }}/includes/pre_roles.yaml"
 
-    - name: "layer2: init tasks"
-      include_tasks: "{{ role_path }}/includes/tasks.yaml"
+    - name: "layer2: init collectors"
+      include_tasks: "{{ role_path }}/includes/collectors.yaml"
 
   always:
     - name: "layer2: init post tasks"

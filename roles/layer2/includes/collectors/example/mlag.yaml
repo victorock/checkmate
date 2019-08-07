@@ -1,0 +1,4 @@
+---
+# tasks to collect mlag related data
+#- name: "collectors.example.mlag: command to get content"
+# https://github.com/nmake/jetpack/blob/master/cli_parse_transform.md

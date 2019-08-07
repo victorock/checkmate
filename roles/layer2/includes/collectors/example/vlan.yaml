@@ -1,0 +1,4 @@
+---
+# tasks to collect vlan related data
+#- name: "collectors.example.vlan: command to get content"
+# https://github.com/nmake/jetpack/blob/master/cli_parse_transform.md

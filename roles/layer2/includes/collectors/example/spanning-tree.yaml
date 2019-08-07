@@ -1,0 +1,4 @@
+---
+# tasks to collect spanning-tree related data
+#- name: "collectors.example.spanning_tree: command to get content"
+# https://github.com/nmake/jetpack/blob/master/cli_parse_transform.md
