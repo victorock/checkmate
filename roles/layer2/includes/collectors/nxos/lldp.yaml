@@ -1,5 +1,5 @@
 ---
-- name: "nxos.lldp: show lldp neighbor"
+- name: "nxos.lldp: show lldp neighbors"
   cli_parse_transform:
     engine: "native_json"
     commands:
@@ -8,4 +8,15 @@
         transform:
         - name: "nxos_flatten_table_row"
         - name: set_root_key
-          key: lldp_neighbor
+          key: lldp_neighbors
+
+- name: "nxos.lldp: show lldp neighbors"
+  cli_parse_transform:
+    engine: "native_json"
+    commands:
+      - command: "show lldp neighbors detail"
+        set_fact: True
+        transform:
+        - name: "nxos_flatten_table_row"
+        - name: set_root_key
+          key: lldp_neighbors_detail
