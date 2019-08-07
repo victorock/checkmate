@@ -1,7 +1,0 @@
----
-- name: "Layer2: lldp"
-  hosts: all
-  gather_facts: false
-  roles:
-    - role: "layer2"
-      function: "lldp"
