@@ -1,7 +1,7 @@
 ---
 layer2_pre_tasks: []
 layer2_pre_roles: []
-layer2_facts_os: "{{ ansible_network_os | default(None, True) }}"
+layer2_os: "{{ ansible_network_os | default(None, True) }}"
 layer2_platform: "{{ ansible_network_platform | default(None, True) }}"
 layer2_function: "{{ function | default('main') }}"
 layer2_collectors: "{{ _layer2_collectors | dict_merge_bang(collectors)  }}"
