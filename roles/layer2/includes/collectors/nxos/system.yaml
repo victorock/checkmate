@@ -10,4 +10,4 @@
         - name: "str_to_native"
         - name: "nxos_flatten_table_row"
         - name: set_root_key
-          key: show_system_resources
+          key: system_resources
