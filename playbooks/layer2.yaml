@@ -6,3 +6,14 @@
   roles:
     - role: "victorock.jetpack"
     - role: "layer2"
+      collectors:
+        - 'arp'
+        - 'cdp'
+        - 'interface'
+        - 'lldp'
+        - 'mac'
+        - 'mlag'
+        - 'spanning_tree'
+        - 'system'
+        - 'vlan'
+
